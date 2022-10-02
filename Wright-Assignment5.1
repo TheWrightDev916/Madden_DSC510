@@ -1,0 +1,44 @@
+# DSC 510-T304
+# Week 5
+# Programming Assignment Week 5
+# Author Anthony Wright Jr.
+# 10-02-2022
+
+def performCalculation(operator):
+    num1 = int(input('Please enter the first number: '))
+    num2 = int(input('Please enter the second number: '))
+
+    print('Your calculated value is: ')
+    if operator == '+':
+        return num1 + num2
+    elif operator == '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        return num1 / num2
+
+
+def calculateAverage():
+    # calculate average of numbers required by user
+    num = int(input('Please enter the amount of numbers you wish to have averaged: '))
+    sum = 0
+    for i in range(num):
+        sum += int(input('Please enter number ' + str(i+1) + ' : '))
+    return 'Your calculated average is : ' + str(sum / num)
+
+
+def main():
+    num1 = input('Enter "start" to start the Calculator program, or "end" to stop : ')
+    # allow the user to run the program until they enter a value which ends the loop.
+    while num1 != 'end':
+        operator = input('Please enter the mathematical operation you wish to perform Ex.(+, -, *, /) : ')
+        if operator not in '*+-/':
+            print('Invalid operator type')
+        else:
+            print(performCalculation(operator))
+            print(calculateAverage())
+        num1 = input('Restart program by entering "start" or "end" to end the program: ')
+        
+        
+main()
